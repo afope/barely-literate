@@ -55,7 +55,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-4">
             <Button asChild size="sm" className="hidden md:flex">
-              <Link href="#join">join the club</Link>
+              <Link href="#join">join the society</Link>
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
@@ -191,82 +191,82 @@ export default function Home() {
               <div className="flex justify-center">
                 <TabsList className="mb-8">
                   <TabsTrigger value="fiction">fiction</TabsTrigger>
-                  <TabsTrigger value="non-fiction">non-Fiction</TabsTrigger>
+                  <TabsTrigger value="non-fiction">non-fiction</TabsTrigger>
                   <TabsTrigger value="classics">classics</TabsTrigger>
                 </TabsList>
               </div>
               <TabsContent value="fiction" className="space-y-4">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   <BookVotingCard
-                    title="The Midnight Library"
-                    author="Matt Haig"
+                    title="chronicles from the land of the happiest people on earth"
+                    author="wole soyinka"
                     description="Between life and death there is a library, and within that library, the shelves go on forever."
                     votes={42}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/chronicles.jpg"
                   />
                   <BookVotingCard
-                    title="Cloud Cuckoo Land"
-                    author="Anthony Doerr"
+                    title="sula"
+                    author="tony morrison"
                     description="A celebration of books and the connections that transcend time and space."
                     votes={38}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/sula.jpg"
                   />
                   <BookVotingCard
-                    title="Sea of Tranquility"
-                    author="Emily St. John Mandel"
+                    title="ghana must go"
+                    author="taiye selasi"
                     description="A novel of art, time travel, love, and plague."
                     votes={27}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/ghana must go.jpg"
                   />
                 </div>
               </TabsContent>
               <TabsContent value="non-fiction" className="space-y-4">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   <BookVotingCard
-                    title="Atomic Habits"
-                    author="James Clear"
+                    title="wayward lives, beautiful experiments"
+                    author="sadiya hartman"
                     description="Tiny Changes, Remarkable Results: An Easy & Proven Way to Build Good Habits & Break Bad Ones."
                     votes={35}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/wayward.jpg?height=300&width=200"
                   />
                   <BookVotingCard
-                    title="Breath"
-                    author="James Nestor"
+                    title="all about love"
+                    author="bell hooks"
                     description="The New Science of a Lost Art - exploring how we breathe and how to do it better."
                     votes={29}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/love.jpg?height=300&width=200"
                   />
                   <BookVotingCard
-                    title="Four Thousand Weeks"
-                    author="Oliver Burkeman"
+                    title="naomi osaka"
+                    author="ben rothenberg"
                     description="Time Management for Mortals - making the most of our radically finite lives."
                     votes={31}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/naomi.jpeg?height=300&width=200"
                   />
                 </div>
               </TabsContent>
               <TabsContent value="classics" className="space-y-4">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   <BookVotingCard
-                    title="Pride and Prejudice"
-                    author="Jane Austen"
-                    description="A classic tale of love, reputation, and societal expectations."
-                    votes={45}
-                    coverUrl="/placeholder.svg?height=300&width=200"
-                  />
-                  <BookVotingCard
-                    title="One Hundred Years of Solitude"
-                    author="Gabriel García Márquez"
-                    description="The multi-generational story of the Buendía family in the fictional town of Macondo."
-                    votes={37}
-                    coverUrl="/placeholder.svg?height=300&width=200"
-                  />
-                  <BookVotingCard
-                    title="To Kill a Mockingbird"
-                    author="Harper Lee"
+                    title="things fall apart"
+                    author="chinua achebe"
                     description="A story of racial injustice and moral growth in the American South."
                     votes={41}
-                    coverUrl="/placeholder.svg?height=300&width=200"
+                    coverUrl="/images/fall.jpg"
+                  />
+                  <BookVotingCard
+                    title="one hundred years of solitude"
+                    author="gabriel garcía márquez"
+                    description="The multi-generational story of the Buendía family in the fictional town of Macondo."
+                    votes={37}
+                    coverUrl="/images/solitude.jpg"
+                  />
+                  <BookVotingCard
+                    title="pride and prejudice"
+                    author="jane austen"
+                    description="A classic tale of love, reputation, and societal expectations."
+                    votes={45}
+                    coverUrl="/images/pp.jpg"
                   />
                 </div>
               </TabsContent>
@@ -290,7 +290,7 @@ export default function Home() {
               <Card className="overflow-hidden">
                 <div className="aspect-video w-full overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=400&width=800"
+                    src="/images/meeting.jpg"
                     width={800}
                     height={400}
                     alt="People discussing books at a cafe"
@@ -308,9 +308,9 @@ export default function Home() {
                     in-person discussions
                   </h3>
                   <p className="mt-2 text-muted-foreground">
-                    join us at The Literary Cafe for lively discussions over
-                    coffee and pastries. Our in-person meetups are the perfect
-                    way to connect with local book lovers.
+                    join us at MILIKI for lively discussions over coffee and
+                    pastries. Our in-person meetups are the perfect way to
+                    connect with local book lovers.
                   </p>
                   <div className="mt-4 flex items-center gap-2">
                     <Button variant="outline" size="sm">
@@ -323,7 +323,7 @@ export default function Home() {
               <Card className="overflow-hidden">
                 <div className="aspect-video w-full overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=400&width=800"
+                    src="/images/online.jpg"
                     width={800}
                     height={400}
                     alt="Virtual book club meeting"
@@ -371,31 +371,31 @@ export default function Home() {
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <ReviewCard
-                bookTitle="The Song of Achilles"
-                bookAuthor="Madeline Miller"
-                reviewerName="Emma L."
+                bookTitle="the famished road"
+                bookAuthor="ben okri"
+                reviewerName="mofe ojo"
                 rating={5}
                 review="A breathtaking retelling that brings ancient mythology to vivid life. The prose is lyrical and the emotional impact is profound."
-                avatarUrl="/placeholder.svg?height=100&width=100"
-                bookCoverUrl="/placeholder.svg?height=300&width=200"
+                avatarUrl="/images/mofe.jpg"
+                bookCoverUrl="/images/the-famished-road.jpg"
               />
               <ReviewCard
-                bookTitle="Klara and the Sun"
-                bookAuthor="Kazuo Ishiguro"
-                reviewerName="Michael T."
+                bookTitle="what happened miss simone"
+                bookAuthor="alan light"
+                reviewerName="tide ojo"
                 rating={4}
                 review="A thought-provoking exploration of what it means to be human, told through the eyes of an artificial friend. Ishiguro's subtle storytelling is masterful."
-                avatarUrl="/placeholder.svg?height=100&width=100"
-                bookCoverUrl="/placeholder.svg?height=300&width=200"
+                avatarUrl="/images/tide.jpg"
+                bookCoverUrl="/images/simone.jpg"
               />
               <ReviewCard
-                bookTitle="Educated"
-                bookAuthor="Tara Westover"
-                reviewerName="Sarah J."
+                bookTitle="the palmwine drinkard"
+                bookAuthor="amos tutuola"
+                reviewerName="tani ojo"
                 rating={5}
                 review="An incredible memoir about the transformative power of education. Our discussion about this book was one of the most engaging we've had."
-                avatarUrl="/placeholder.svg?height=100&width=100"
-                bookCoverUrl="/placeholder.svg?height=300&width=200"
+                avatarUrl="/images/tani.jpg"
+                bookCoverUrl="/images/drinkard.png"
               />
             </div>
             <div className="mt-8 text-center">
@@ -455,15 +455,15 @@ export default function Home() {
                   <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-primary/10"></div>
                   <div className="relative">
                     <blockquote className="font-serif text-lg italic">
-                      &quot;joining ITA Book Club has been one of the best
-                      decisions I&apos;ve made. I&apos;ve discovered amazing
-                      books and made wonderful friends who share my passion for
-                      reading.&quot;
+                      &quot;joining the barely literate society has been one of
+                      the best decisions I&apos;ve made. I&apos;ve discovered
+                      amazing books and made wonderful friends who share my
+                      passion for reading.&quot;
                     </blockquote>
                     <div className="mt-4 flex items-center gap-2">
                       <div className="h-10 w-10 overflow-hidden rounded-full bg-muted">
                         <Image
-                          src="/placeholder.svg?height=100&width=100"
+                          src="/images/mofe.jpg"
                           width={100}
                           height={100}
                           alt="Member avatar"
@@ -471,9 +471,9 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <p className="font-medium">Jessica R.</p>
+                        <p className="font-medium">jessica regina</p>
                         <p className="text-sm text-muted-foreground">
-                          Member since 2022
+                          member since 2022
                         </p>
                       </div>
                     </div>
@@ -514,7 +514,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-serif font-bold">Quick Links</h4>
+              <h4 className="font-serif font-bold">quick links</h4>
               <ul className="mt-4 space-y-2">
                 <li>
                   <Link
@@ -551,14 +551,14 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-serif font-bold">Resources</h4>
+              <h4 className="font-serif font-bold">resources</h4>
               <ul className="mt-4 space-y-2">
                 <li>
                   <Link
                     href="#"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    reading Lists
+                    reading lists
                   </Link>
                 </li>
                 <li>
@@ -588,7 +588,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-serif font-bold">Stay Connected</h4>
+              <h4 className="font-serif font-bold">stay connected</h4>
               <p className="mt-4 text-sm text-muted-foreground">
                 subscribe to our newsletter for updates on new books, events,
                 and more.
@@ -601,7 +601,7 @@ export default function Home() {
                   required
                 />
                 <Button type="submit" size="sm">
-                  Subscribe
+                  subscribe
                 </Button>
               </form>
             </div>

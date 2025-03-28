@@ -33,14 +33,14 @@ export function JoinForm() {
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
         <h3 className="font-serif text-xl font-bold">
-          Welcome to ITA Book Club!
+          Welcome to the barely literate society!
         </h3>
         <p className="text-muted-foreground">
-          Thank you for joining our community. We've sent a confirmation email
+          thank you for joining our community. we've sent a confirmation email
           with details about upcoming events.
         </p>
         <Button onClick={() => setIsSubmitted(false)} variant="outline">
-          Return to Form
+          return to form
         </Button>
       </div>
     );
@@ -50,52 +50,52 @@ export function JoinForm() {
     <form onSubmit={handleSubmit} className="mt-6 space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="first-name">First Name</Label>
+          <Label htmlFor="first-name">first name</Label>
           <Input id="first-name" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="last-name">Last Name</Label>
+          <Label htmlFor="last-name">last name</Label>
           <Input id="last-name" required />
         </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">email</Label>
         <Input id="email" type="email" required />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="reading-preference">Reading Preferences</Label>
+        <Label htmlFor="reading-preference">reading preferences</Label>
         <Select>
           <SelectTrigger id="reading-preference">
             <SelectValue placeholder="Select your preferences" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="fiction">Fiction</SelectItem>
-            <SelectItem value="non-fiction">Non-Fiction</SelectItem>
-            <SelectItem value="classics">Classics</SelectItem>
-            <SelectItem value="mystery">Mystery & Thriller</SelectItem>
-            <SelectItem value="scifi">Science Fiction & Fantasy</SelectItem>
-            <SelectItem value="all">All Genres</SelectItem>
+            <SelectItem value="fiction">fiction</SelectItem>
+            <SelectItem value="non-fiction">non-fiction</SelectItem>
+            <SelectItem value="classics">classics</SelectItem>
+            <SelectItem value="mystery">mystery & thriller</SelectItem>
+            <SelectItem value="scifi">science fiction & fantasy</SelectItem>
+            <SelectItem value="all">all genres</SelectItem>
           </SelectContent>
         </Select>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="meetup-preference">Meetup Preference</Label>
+        <Label htmlFor="meetup-preference">meetup Preference</Label>
         <Select>
           <SelectTrigger id="meetup-preference">
             <SelectValue placeholder="Select your preference" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="in-person">In-Person Only</SelectItem>
-            <SelectItem value="virtual">Virtual Only</SelectItem>
-            <SelectItem value="both">Both In-Person & Virtual</SelectItem>
+            <SelectItem value="in-person">in-person only</SelectItem>
+            <SelectItem value="virtual">virtual Only</SelectItem>
+            <SelectItem value="both">both in-person & virtual</SelectItem>
           </SelectContent>
         </Select>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="about">Tell us about yourself</Label>
+        <Label htmlFor="about">tell us about yourself</Label>
         <Textarea
           id="about"
-          placeholder="What kind of books do you enjoy? What are you hoping to get out of the book club?"
+          placeholder="what kind of books do you enjoy? what are you hoping to get out of the book club?"
           className="min-h-[100px]"
         />
       </div>
@@ -107,14 +107,14 @@ export function JoinForm() {
           required
         />
         <Label htmlFor="terms" className="text-sm font-normal">
-          I agree to the{" "}
+          i agree to the{" "}
           <a href="#" className="text-primary hover:underline">
             terms and conditions
           </a>
         </Label>
       </div>
       <Button type="submit" className="w-full">
-        Join the Club
+        join the society
       </Button>
     </form>
   );
