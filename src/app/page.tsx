@@ -15,6 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookVotingCard } from "@/components/book-voting-card";
 import { ReviewCard } from "@/components/review-card";
 import { JoinForm } from "@/components/join-form";
+import { Navigation } from "@/components/navigation";
 
 export default function Home() {
   return (
@@ -27,32 +28,7 @@ export default function Home() {
               barely literare
             </span>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <Link
-              href="#about"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              about
-            </Link>
-            <Link
-              href="#voting"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              book voting
-            </Link>
-            <Link
-              href="#meetups"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              meetups
-            </Link>
-            <Link
-              href="#reviews"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              reviews
-            </Link>
-          </nav>
+          <Navigation />
           <div className="flex items-center gap-4">
             <Button asChild size="sm" className="hidden md:flex">
               <Link href="#join">join the society</Link>
@@ -67,7 +43,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-muted py-24 md:py-32">
-          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center "></div>
+          <div className="absolute inset-0 bg-[url('/images/bg.jpg')] bg-cover bg-center "></div>
           <div className="container relative grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-6">
               {/* <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
@@ -485,7 +461,7 @@ export default function Home() {
                 <div className="absolute -bottom-3 -left-3 h-12 w-12 rounded-full bg-primary"></div>
                 <div className="relative">
                   <h3 className="font-serif text-2xl font-bold">
-                    join the barely literate society
+                    join the 'barely literate' society
                   </h3>
                   <p className="mt-2 text-muted-foreground">
                     fill out the form below to become a member. it&apos;s free
