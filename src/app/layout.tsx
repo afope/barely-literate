@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Barely Literate Society",
-  description: "A community of book lovers",
+  title: "barely literate society",
+  description: "a community of book lovers",
 };
 
 export default function RootLayout({
