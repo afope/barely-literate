@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  BookOpen,
-  Calendar,
-  Users,
-  Star,
-  ArrowRight,
-  Menu,
-} from "lucide-react";
+import { Book, Calendar, Users, Star, ArrowRight, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,80 +8,56 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookVotingCard } from "@/components/book-voting-card";
 import { ReviewCard } from "@/components/review-card";
 import { JoinForm } from "@/components/join-form";
-import { Navigation } from "@/components/navigation";
+import { Nav } from "@/components/nav";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="h-6 w-6 text-primary" />
-            <span className="text-xl font-serif font-bold tracking-tight">
-              barely literare
-            </span>
-          </div>
-          <Navigation />
-          <div className="flex items-center gap-4">
-            <Button asChild size="sm" className="hidden md:flex">
-              <Link href="#join">join the society</Link>
-            </Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-muted py-24 md:py-32">
-          <div className="absolute inset-0 bg-[url('/images/bg.jpg')] bg-cover bg-center "></div>
+        <section className="relative overflow-hidden bg-[#FF5733] py-24 md:py-32">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-[url('/images/bg.jpg')] bg-cover bg-center w-[800px] h-[500px] mr-10"></div>
           <div className="container relative grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-6">
-              {/* <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-                x Join our literary community
-              </div> */}
               <h1 className="text-[#fff000] font-serif text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 discover, discuss, and delight in books together
               </h1>
-              {/* <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                ITA Book Club brings book lovers together to explore new worlds,
-                share perspectives, and build lasting connections through the
-                joy of reading.
-              </p> */}
+              <p className="max-w-[600px] text-[#FF5733]  md:text-xl">
+                the barely literate society brings book lovers together to
+                explore new worlds, share perspectives, and build lasting
+                connections through the joy of reading.
+              </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg">
-                  <Link href="#join">
-                    join now <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="#join">join now </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href="#voting">this month's books</Link>
+                  <Link href="#voting">this quarter's books</Link>
                 </Button>
               </div>
             </div>
-            <div className="relative mx-auto aspect-square max-w-md rounded-full bg-primary/10 p-4 md:p-8">
-              {/* <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5"></div> */}
-              {/* <Image
+            {/* <div className="relative mx-auto aspect-square max-w-md rounded-full bg-primary/10 p-4 md:p-8">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5"></div>
+              <Image
                 src="/placeholder.svg?height=500&width=500"
                 width={500}
                 height={500}
                 alt="Stack of books with a cup of coffee"
                 className="relative z-10 rounded-full object-cover"
                 priority
-              /> */}
-              {/* <div className="absolute -right-4 -top-4 rounded-full bg-background p-3 shadow-lg">
+              />
+              <div className="absolute -right-4 -top-4 rounded-full bg-background p-3 shadow-lg">
                 <div className="rounded-full bg-primary p-2 text-primary-foreground">
                   <Users className="h-6 w-6" />
                 </div>
-              </div> */}
-              {/* <div className="absolute -bottom-4 -left-4 rounded-full bg-background p-3 shadow-lg">
+              </div>
+              <div className="absolute -bottom-4 -left-4 rounded-full bg-background p-3 shadow-lg">
                 <div className="rounded-full bg-primary p-2 text-primary-foreground">
                   <BookOpen className="h-6 w-6" />
                 </div>
-              </div> */}
-            </div>
+              </div>
+            </div> */}
           </div>
         </section>
 
@@ -108,7 +77,7 @@ export default function Home() {
               <Card className="bg-background/50 backdrop-blur transition-all hover:shadow-lg">
                 <CardContent className="pt-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <BookOpen className="h-6 w-6 text-primary" />
+                    <Book className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-serif text-xl font-bold">
                     curated selections
@@ -156,7 +125,7 @@ export default function Home() {
           <div className="container">
             <div className="mx-auto max-w-[58rem] text-center">
               <h2 className="font-serif text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
-                vote for next month's book
+                vote for the book of the quarter
               </h2>
               <p className="mt-4 text-muted-foreground md:text-xl">
                 help shape our reading journey by voting for your favorite from
@@ -177,21 +146,21 @@ export default function Home() {
                     title="chronicles from the land of the happiest people on earth"
                     author="wole soyinka"
                     description="Between life and death there is a library, and within that library, the shelves go on forever."
-                    votes={42}
+                    votes={1}
                     coverUrl="/images/chronicles.jpg"
                   />
                   <BookVotingCard
                     title="sula"
                     author="tony morrison"
                     description="A celebration of books and the connections that transcend time and space."
-                    votes={38}
+                    votes={1}
                     coverUrl="/images/sula.jpg"
                   />
                   <BookVotingCard
                     title="ghana must go"
                     author="taiye selasi"
                     description="A novel of art, time travel, love, and plague."
-                    votes={27}
+                    votes={1}
                     coverUrl="/images/ghana must go.jpg"
                   />
                 </div>
@@ -202,21 +171,21 @@ export default function Home() {
                     title="wayward lives, beautiful experiments"
                     author="sadiya hartman"
                     description="Tiny Changes, Remarkable Results: An Easy & Proven Way to Build Good Habits & Break Bad Ones."
-                    votes={35}
+                    votes={1}
                     coverUrl="/images/wayward.jpg?height=300&width=200"
                   />
                   <BookVotingCard
                     title="all about love"
                     author="bell hooks"
                     description="The New Science of a Lost Art - exploring how we breathe and how to do it better."
-                    votes={29}
+                    votes={1}
                     coverUrl="/images/love.jpg?height=300&width=200"
                   />
                   <BookVotingCard
                     title="naomi osaka"
                     author="ben rothenberg"
                     description="Time Management for Mortals - making the most of our radically finite lives."
-                    votes={31}
+                    votes={1}
                     coverUrl="/images/naomi.jpeg?height=300&width=200"
                   />
                 </div>
@@ -227,21 +196,21 @@ export default function Home() {
                     title="things fall apart"
                     author="chinua achebe"
                     description="A story of racial injustice and moral growth in the American South."
-                    votes={41}
+                    votes={1}
                     coverUrl="/images/fall.jpg"
                   />
                   <BookVotingCard
                     title="one hundred years of solitude"
                     author="gabriel garcía márquez"
                     description="The multi-generational story of the Buendía family in the fictional town of Macondo."
-                    votes={37}
+                    votes={1}
                     coverUrl="/images/solitude.jpg"
                   />
                   <BookVotingCard
                     title="pride and prejudice"
                     author="jane austen"
                     description="A classic tale of love, reputation, and societal expectations."
-                    votes={45}
+                    votes={1}
                     coverUrl="/images/pp.jpg"
                   />
                 </div>
@@ -349,7 +318,7 @@ export default function Home() {
               <ReviewCard
                 bookTitle="the famished road"
                 bookAuthor="ben okri"
-                reviewerName="mofe ojo"
+                reviewerName="oluwaseun adebayo"
                 rating={5}
                 review="A breathtaking retelling that brings ancient mythology to vivid life. The prose is lyrical and the emotional impact is profound."
                 avatarUrl="/images/mofe.jpg"
@@ -358,7 +327,7 @@ export default function Home() {
               <ReviewCard
                 bookTitle="what happened miss simone"
                 bookAuthor="alan light"
-                reviewerName="tide ojo"
+                reviewerName="chidimma okonkwo"
                 rating={4}
                 review="A thought-provoking exploration of what it means to be human, told through the eyes of an artificial friend. Ishiguro's subtle storytelling is masterful."
                 avatarUrl="/images/tide.jpg"
@@ -366,7 +335,7 @@ export default function Home() {
               />
               <ReviewCard
                 bookTitle="the palmwine drinkard"
-                bookAuthor="amos tutuola"
+                bookAuthor="aminu ibrahim "
                 reviewerName="tani ojo"
                 rating={5}
                 review="An incredible memoir about the transformative power of education. Our discussion about this book was one of the most engaging we've had."
@@ -399,7 +368,7 @@ export default function Home() {
                     <div className="mt-1 rounded-full bg-primary/10 p-1">
                       <Star className="h-4 w-4 text-primary" />
                     </div>
-                    <span>vote on our monthly book selections</span>
+                    <span>vote on our quarterly book selections</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="mt-1 rounded-full bg-primary/10 p-1">
@@ -479,7 +448,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="flex items-center gap-2">
-                <BookOpen className="h-6 w-6 text-primary" />
+                <Book className="h-6 w-6 text-primary" />
                 <span className="text-xl font-serif font-bold tracking-tight">
                   barely literate society
                 </span>

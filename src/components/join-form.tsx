@@ -95,7 +95,7 @@ export function JoinForm() {
         <Label htmlFor="about">tell us about yourself</Label>
         <Textarea
           id="about"
-          placeholder="what kind of books do you enjoy? what are you hoping to get out of the book club?"
+          placeholder="what kind of books do you enjoy? what are you hoping to get out of the barely literate book society?"
           className="min-h-[100px]"
         />
       </div>

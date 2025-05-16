@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ThumbsUp } from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,16 +25,80 @@ export function BookVotingCard({
   votes: initialVotes,
   coverUrl,
 }: BookVotingCardProps) {
+  const { user } = useAuth();
   const [votes, setVotes] = useState(initialVotes);
   const [hasVoted, setHasVoted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleVote = () => {
-    if (!hasVoted) {
-      setVotes(votes + 1);
-      setHasVoted(true);
-    } else {
-      setVotes(votes - 1);
-      setHasVoted(false);
+  useEffect(() => {
+    async function checkUserVote() {
+      if (!user) return;
+
+      try {
+        const { data, error } = await supabase
+          .from("book_votes")
+          .select("id")
+          .eq("user_id", user.id)
+          .eq("book_title", title)
+          .single();
+
+        if (error && error.code !== "PGRST116") {
+          throw error;
+        }
+
+        setHasVoted(!!data);
+      } catch (error) {
+        console.error("Error checking vote:", error);
+      }
+    }
+
+    checkUserVote();
+  }, [user, title]);
+
+  const handleVote = async () => {
+    if (!user) {
+      toast.error("Please sign in to vote");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      if (!hasVoted) {
+        // Add vote
+        const { error } = await supabase.from("book_votes").insert({
+          user_id: user.id,
+          book_title: title,
+          book_author: author,
+        });
+
+        if (error) throw error;
+
+        setVotes(votes + 1);
+        setHasVoted(true);
+        toast.success("Vote recorded!");
+      } else {
+        // Remove vote
+        const { error } = await supabase
+          .from("book_votes")
+          .delete()
+          .eq("user_id", user.id)
+          .eq("book_title", title);
+
+        if (error) throw error;
+
+        setVotes(votes - 1);
+        setHasVoted(false);
+        toast.success("Vote removed");
+      }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -62,8 +129,15 @@ export function BookVotingCard({
             variant={hasVoted ? "default" : "outline"}
             size="sm"
             onClick={handleVote}
+            disabled={isLoading}
           >
-            {hasVoted ? "Voted" : "Vote"}
+            {isLoading ? (
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+            ) : hasVoted ? (
+              "Voted"
+            ) : (
+              "Vote"
+            )}
           </Button>
         </div>
       </CardContent>
