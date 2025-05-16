@@ -151,7 +151,7 @@ export default function Home() {
                   />
                   <BookVotingCard
                     title="sula"
-                    author="tony morrison"
+                    author="toni morrison"
                     description="A celebration of books and the connections that transcend time and space."
                     votes={1}
                     coverUrl="/images/sula.jpg"
