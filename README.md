@@ -187,7 +187,7 @@ npm run lint
 - `last_name` (text)
 - `updated_at` (timestamp)
 
-## 🤝 contributing
+## 🤝🏿 contributing
 
 this is currently a personal project in active development. contributions and suggestions are welcome!
 
@@ -195,11 +195,11 @@ this is currently a personal project in active development. contributions and su
 
 this project is open source and available under the [MIT license](LICENSE).
 
-## 👨‍💻 author
+## 👩🏿‍💻 author
 
 afọpẹ́fólúwa òjó
 
-## 🙏 acknowledgments
+## 🙏🏿 acknowledgments
 
 - book cover images from various sources
 - design inspiration from modern book communities
